@@ -9,10 +9,7 @@ from PIL import Image
 #Load and denoise noised:
 
 noised = Image.open('noised.jpg').convert('L')
-
 regular = Image.open('regular.jpg').convert('L')
-
-#Optional additional noise: grayscaled = grayscaled + 0.2 * np.random.normal(size=grayscaled.shape)
 
 denoised = scipy.ndimage.median_filter(noised, size=3)
 
